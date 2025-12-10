@@ -623,11 +623,11 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, "hM:i:I:o:b:e:S:j:vsmtca:d:rFV:l:L:O:",[])
     except getopt.GetoptError:
-        print('prog.py -i <initfile>  -I <Imagefolder> -o <outputfolder> -b <imagestartnumber> -e <imageendnumber> -v <verbose>')
+        print('prog.py "-M"/"--mode" <mode>, "-i"/"--initfile" <initfile>,  "-I"/"--imagepath" <Imagefolder>, "-o"/"--outputpath" <outputfolder>, "-S"/"--shapepath" <shapefolder>, "-j"/"--measurementinitfile" <measurementinitfile>, "-b"/"--startnumber" <imagestartnumber>, "-e"/"--endnumber" <imageendnumber>, "-s"/"--saveshape", "-m"/"--savemeasurement", "-v"/"--verbose", "-t"/"--showimage", "-d"/"--imagesizescaler" <scaler>, "-c"/"--autoclose", "-a"/"--annotate" <annotations>, "-r"/"--annotateresult", "-V"/"--savevideo" <framerate>, "-F"/"--saveframe", "-L"/"--lablepath" <path>, "-l"/"--annotatelabels" <annotation>, "-O" <imagenumerlist> ')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('prog.py "-M", "--mode" <mode> "-i", "--initfile" <initfile>,  "-I", "--imagepath" <Imagefolder>, "-o", "--outputpath" <outputfolder>, "-S", "--shapepath" <shapefolder>, "-j", "--measurementinitfile" <measurementinitfile>, "-b", "--startnumber" <imagestartnumber>, "-e", "--endnumber" <imageendnumber>, "-s", "--saveshape", "-m", "--savemeasurement", "-v", "--verbose", "-t", "--showimage", "-d", "--imagesizescaler" <scaler>, "-c", "--autoclose", "-a", "--annotate" <annotations>, "-r", "--annotateresult"')
+            print('prog.py "-M"/"--mode" <mode>, "-i"/"--initfile" <initfile>,  "-I"/"--imagepath" <Imagefolder>, "-o"/"--outputpath" <outputfolder>, "-S"/"--shapepath" <shapefolder>, "-j"/"--measurementinitfile" <measurementinitfile>, "-b"/"--startnumber" <imagestartnumber>, "-e"/"--endnumber" <imageendnumber>, "-s"/"--saveshape", "-m"/"--savemeasurement", "-v"/"--verbose", "-t"/"--showimage", "-d"/"--imagesizescaler" <scaler>, "-c"/"--autoclose", "-a"/"--annotate" <annotations>, "-r"/"--annotateresult", "-V"/"--savevideo" <framerate>, "-F"/"--saveframe", "-L"/"--lablepath" <path>, "-l"/"--annotatelabels" <annotation>, "-O" <imagenumerlist> ')
             sys.exit()
         elif opt in ("-M", "--mode"):    
             mode = arg
