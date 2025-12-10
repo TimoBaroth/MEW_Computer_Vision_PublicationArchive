@@ -1,4 +1,4 @@
-# MEW Computer Vision
+# Advanced Computer Vision for MEW
 
 This code provides implementation of the computer vision based melt electrowriting (MEW) jet measurement proposed in "Open-Source Computer Vison Software for Advanced Visualization and Quantification of Melt Electrowriting Jets". 
 The publication can be found at: 
@@ -60,4 +60,5 @@ The list includes the versions that were used. Newer versions are likely compati
 | SciPy | 1.12.0 |
 | sknw | 0.15 |
 | networkx | 3.2.1 |
+
 
