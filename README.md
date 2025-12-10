@@ -12,7 +12,7 @@ The code is licensed under GNU AGPLv3. Please cite if you use the software.
 The CV code loads images and extracts the jet shape and selected measurements through a number of processing steps. It is expected that the images are distrortion free and that the pixel scale is uniform over the entire image. This may require image pre-processing, depending on the imaging setup. The processing pipeline follows two major steps. First, the jet shape which is defined by the left edge, the right edge and the centerline of the jet is extracted. Second, based on the jet shape, measurements of the jet diameter, jet angle, jet length, jet area and jet volume can be taken. The two steps can be processed individually or combined. The code provides a command line interface to specify input- and output-files as well as a number of options. Measurement settings are specified in a excel sheet.
 
 ## Setup
-### Computer vision code
+### Post processing
 1) Clone the "Python" folder.
 2) Ensure all required packages are installed, see list below. Refer to the individual package installation instructions.
 3) Ensure all images that are to be processed are in a folder with no other files. The images should be named with their image number, e.g. 1.jpg, 2.jpg.... 
@@ -40,10 +40,12 @@ https://data.researchdatafinder.qut.edu.au/dataset/0a195cfb-4e71-402b-8d79-d2df0
 | -t, --showimage | If set, processed image is shown. |
 | -d, --imagesizescaler \<scale>| Scales the shown image by the provided number., e.g. 0.5 -> half size. |
 | -c, --autoclose | If set, image window is updated with next image as soon as processing of past image finished. |
-| -a, --annotate \<annotation> | Annotates the shown image with: e - jet edges, m - jet midline, c - all found contours, ja - measured jet angle(s), jd - measured jet diameter(s), jL - measured jet length(s), jA - measured jet area(s), jv - measured jet vector(s). If more than one is required, provide as comma separated text, e.g.: e,m,jd |
+| -a, --annotate \<annotation> | Annotates the shown/saved image/video with: e - jet edges, m - jet centerline, c - all found contours, ja - measured jet angle(s), jd - measured jet diameter(s), jL - measured jet length(s), jA - measured jet area(s), jv - measured jet volume(s). If more than one is required, provide as comma separated text, e.g.: e,m,jd |
 | -r, --annotateresult| Adds the measurement as text to the image annotations. |
 | -V, --savevideo \<framerate> | Creates a video made up of the processed images with annotations. Framerate (framses/second) is defined by the provided number. |
-| -F, --saveframe | If set, processed image with annotations is saved.
+| -F, --saveframe | If set, processed image with annotations is saved.|
+|-L, --lablepath \<path> | Path to the image label list file, used for image label annotations.| 
+|-l, --annotatelabels \<annotation>| Annotates the shown/saved image/video with image labels, must match image label list column names. If more than one is required, provide as comma separated text.|
 | -O | nr1,nr2,... List of image numbers to analyse, allows only specific images from the image dictionary to be analysed. |
 
 
