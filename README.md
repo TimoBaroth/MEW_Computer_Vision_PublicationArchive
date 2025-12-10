@@ -1,44 +1,28 @@
-# MEW_CV_Publication
+# MEW Computer Vision
 
-This code provides implementation of the computer vision (CV) based melt electrowriting (MEW) jet measurement and 3D scaffold reconstruction techniques proposed in "PAPER TITLE". 
+This code provides implementation of the computer vision based melt electrowriting (MEW) jet measurement proposed in "Open-Source Computer Vison Software for Advanced Visualization and Quantification of Melt Electrowriting Jets". 
 The publication can be found at: 
 
 PAPER INFORMATION
 
-The code is free to use for research and non-commercial purposes. Please cite if you do so.
+The code is licensed under GNU AGPLv3. Please cite if you use the software.
 
 ## Overview
 ### Computer vision code
-The CV code loads images and extracts the jet shape and selected measurements through a number of processing steps. It is expected that the images are distrortion free and that the pixel scale is uniform over the entire image. This may require image pre-processing, depending on the imaging setup. The processing pipeline follows two major steps. First, the jet shape which is defined by the left edge, the right edge and the midline of the jet is extracted. Second, based on the jet shape, measurements of the jet diameter, jet angle, jet length, jet area and jet vector can be taken. The two steps can be processed individually or combined. The code provides a command line interface to specify input- and output-files as well as a number of options. Measurements settings are specified in a excel sheet.
-
-### 3D scaffold reconstruction
-The 3D scaffold reconstruction code loads specific measurements, that were taken with the CV code, and uses them to reconstruct and 3D plot the printed scaffold structure. This is implemented in a Matlab live-script for ease of use. 
+The CV code loads images and extracts the jet shape and selected measurements through a number of processing steps. It is expected that the images are distrortion free and that the pixel scale is uniform over the entire image. This may require image pre-processing, depending on the imaging setup. The processing pipeline follows two major steps. First, the jet shape which is defined by the left edge, the right edge and the centerline of the jet is extracted. Second, based on the jet shape, measurements of the jet diameter, jet angle, jet length, jet area and jet volume can be taken. The two steps can be processed individually or combined. The code provides a command line interface to specify input- and output-files as well as a number of options. Measurement settings are specified in a excel sheet.
 
 ## Setup
 ### Computer vision code
 1) Clone the "Python" folder.
 2) Ensure all required packages are installed, see list below. Refer to the individual package installation instructions.
-3) Ensure all images that are to be processed are in a folder with no other files. The image naming must follow: "identtext1_identtext2_image_IMAGENO_id_IMAGEID.jpg". identtext1 and identtext2 can be arbitrary but must be set. For example "jet_camera". IMAGENO is the image number. If there are duplicates, only the image loaded last will be processed. IMAGEID must be set and should be a unique identification number. The IMAGEID does not influence the CV calculations but is required for later processing of the results in the here provided Matlab code.
+3) Ensure all images that are to be processed are in a folder with no other files. The images should be named with their image number, e.g. 1.jpg, 2.jpg.... 
 5) If outputs/results are to be saved, create an ouput folder. 
 6) Run the "main.py" code, see "Use" section below for details.
 
-### 3D scaffold reconstruction
-
-
 ## Use
-### Computer vision code
 The CV code can be manipulated via command line arguments, see list below.
-Typical workflow example:
-1) Creation of a initialisation file.
-Run: py main.py -M i -I <imagepath>
-
-2) Define measurements.
-Open the "Excel_Measurement_Spec.xlsx" file. Specify the measurements and export as .csv file as described in the excel workbook.
-
-3) Extract jet shapes and take measurements.
-Prepare image folder and output folder, as described in "Setup" section above.
-Run: py main.py -M sm -I <imagefolderpath> -i <initfilepath> .... => make nice images when paper prep and then put in here as example.
-
+Typical workflow example is shown in this video: 
+https://data.researchdatafinder.qut.edu.au/dataset/0a195cfb-4e71-402b-8d79-d2df06845b94/resource/f000c5fa-242e-4ede-989d-455bb0a7b3b5/download/supplementary_video_1.mp4
 
 | Command line arguments | Note |
 | --- | --- | 
@@ -62,14 +46,10 @@ Run: py main.py -M sm -I <imagefolderpath> -i <initfilepath> .... => make nice i
 | -F, --saveframe | If set, processed image with annotations is saved.
 | -O | nr1,nr2,... List of image numbers to analyse, allows only specific images from the image dictionary to be analysed. |
 
-### 3D scaffold reconstruction
-
-
 
 ## Dependencies 
 A number of software packages are used by the code as listed below. 
 The list includes the versions that were used. Newer versions are likely compatible too.
-### Computer vision code
 
 | Software / Package | Version |
 | --- | --- |
@@ -80,3 +60,4 @@ The list includes the versions that were used. Newer versions are likely compati
 | SciPy | 1.12.0 |
 | sknw | 0.15 |
 | networkx | 3.2.1 |
+
