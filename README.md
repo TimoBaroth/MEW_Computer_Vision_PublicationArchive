@@ -36,7 +36,7 @@ https://data.researchdatafinder.qut.edu.au/dataset/0a195cfb-4e71-402b-8d79-d2df0
 | -e, --endnumber \<number> | End number (inclusive) of file to analyse, default = last available file. |
 | -s, --saveshape | If set, extracted shapes are saved to outputpath. |
 | -m, --savemeasurement | If set, measurements are saved to outputpath.|
-| -v, --verbose | If set, detailed status information and measurements are outputted to command line. | 
+| -v, --verbose | If set, detailed status information and measurements are output to command line. | 
 | -t, --showimage | If set, processed image is shown. |
 | -d, --imagesizescaler \<scale>| Scales the shown image by the provided number., e.g. 0.5 -> half size. |
 | -c, --autoclose | If set, image window is updated with next image as soon as processing of past image finished. |
