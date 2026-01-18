@@ -1,0 +1,12 @@
+Measurement,Reference,MeasurementPositions
+JetLag,RML,100
+JetAngle,RML,100
+JetDiameter,RML,99
+JetLength,AVN,
+JetArea,AVN,
+JetVolume,AML,
+,,
+,,
+General Settings,,
+PixelSize,3.45,
+DiameterNormalApproxDist,25,

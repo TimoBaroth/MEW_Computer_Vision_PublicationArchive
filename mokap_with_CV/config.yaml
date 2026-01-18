@@ -1,0 +1,19 @@
+# Where the recordings will be stored
+base_path: /home/timo/Desktop
+save_format: 'jpg'
+save_quality: 80    # 0 - 100%
+gpu: true
+
+# Add your sources below
+sources:
+    Jet:         # Choose a name
+        type: basler
+        serial: 23210362
+        color: da141d
+        user_set: UserSet1
+
+    Fiber:
+        type: basler
+        serial: 24280974
+        color: 7a9c21
+        user_set: UserSet2
