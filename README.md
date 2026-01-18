@@ -8,6 +8,9 @@ The code is licensed under GNU AGPLv3. Please cite if you use the software.
 ## Overview
 ### Computer vision code
 The CV code loads images and extracts the jet shape and selected measurements through a number of processing steps. It is expected that the images are distrortion free and that the pixel scale is uniform over the entire image. This may require image pre-processing, depending on the imaging setup. The processing pipeline follows two major steps. First, the jet shape which is defined by the left edge, the right edge and the centerline of the jet is extracted. Second, based on the jet shape, measurements of the jet diameter, jet angle, jet length, jet area and jet volume can be taken. The two steps can be processed individually or combined. The code provides a command line interface to specify input- and output-files as well as a number of options. Measurement settings are specified in a excel sheet.
+For real-time processing, the open-source image acquisition software 'mokap' (https://github.com/FlorentLM/mokap.git) was used and modified by:
+1) including core capabilites of the CV code
+2) including communication of process parameter setpoints/readings and CV-measurement results via the open MQTT (mqtt.org) protocol, for integration into printer control systems.
 
 ## Setup
 ### Post processing
@@ -18,8 +21,9 @@ The CV code loads images and extracts the jet shape and selected measurements th
 6) Run the "main.py" code, see "Use" section below for details.
 
 ### Real-time processing
-1) Clone the "
-
+1) Clone the "mokap_with_CV" folder.
+2) The real-time acquitision is ...
+3) C
 
 ## Use
 ## Post processing
@@ -68,6 +72,21 @@ The list includes the versions that were used. Newer versions are likely compati
 | SciPy | 1.12.0 |
 | sknw | 0.15 |
 | networkx | 3.2.1 |
+
+
+## Important notes and known limitations
+Given the time limited nature of research projects and the organic growth of the software, a number of limitations remain as listed below. 
+Nevertheless, we hope that the software will be of use to other researchers and may provide a good foundation for future developments.
+Many comments were made in the code in an atempt to document its function. Further, several earlier versions of some functions remain in the code base. These document some of the attempts that failed or did not perform well, and may be of interest for reserarches trying to improve upon our work.
+
+Post-processing:
+1) ..
+
+Real-time processing:
+The integration of the CV code into the mokap software should be considered as a proof of principle. There are several issues that remain and should be fixed in future iterations, such as:
+1) At time of code creation, the mokap software did not support hardware-synchronisation of cameras. We therefore implemented a simple hardware trigger with serial communication to a RaspberryPi Pico (see PiPico_code folder). However, this was hard coded and should be replaced by migrating to newer mokap versions that should provide better support of various hardware trigger configurations.
+2) Some configuration data is hard coded, e.g. MQTT broker information and topics. This should be changed to be part of the config.yaml file for easy adaptation.
+3) CV-software integration into the mokap software was done in the simplest way possible, in future iterations it should be done in a way that ensures compatibilty / easy porting to new mokap version. 
 
 
 
