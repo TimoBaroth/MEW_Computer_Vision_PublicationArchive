@@ -85,8 +85,9 @@ Post-processing:
 Real-time processing:
 The integration of the CV code into the mokap software should be considered as a proof of principle. There are several issues that remain and should be fixed in future iterations, such as:
 1) At time of code creation, the mokap software did not support hardware-synchronisation of cameras. We therefore implemented a simple hardware trigger with serial communication to a RaspberryPi Pico (see PiPico_code folder). However, this was hard coded and should be replaced by migrating to newer mokap versions that should provide better support of various hardware trigger configurations.
-2) Some configuration data is hard coded, e.g. MQTT broker information and topics. This should be changed to be part of the config.yaml file for easy adaptation.
+2) Some configuration data is hard coded, e.g. MQTT topics. This should be changed to be part of the .env or config.yaml file for easy adaptation.
 3) CV-software integration into the mokap software was done in the simplest way possible, in future iterations it should be done in a way that ensures compatibilty / easy porting to new mokap version. 
+
 
 
 
