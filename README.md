@@ -1,9 +1,7 @@
 # Advanced Computer Vision for MEW
 
 This code provides implementation of the computer vision based melt electrowriting (MEW) jet measurement proposed in "Open-Source Computer Vison Software for Advanced Visualization and Quantification of Melt Electrowriting Jets". 
-The publication can be found at: 
-
-PAPER INFORMATION
+The open access publication can be found at: https://www.tandfonline.com/doi/full/10.1080/17452759.2025.2611474
 
 The code is licensed under GNU AGPLv3. Please cite if you use the software.
 
@@ -19,7 +17,12 @@ The CV code loads images and extracts the jet shape and selected measurements th
 5) If outputs/results are to be saved, create an ouput folder. 
 6) Run the "main.py" code, see "Use" section below for details.
 
+### Real-time processing
+1) Clone the "
+
+
 ## Use
+## Post processing
 The CV code can be manipulated via command line arguments, see list below.
 Typical workflow example is shown in this video: 
 https://data.researchdatafinder.qut.edu.au/dataset/0a195cfb-4e71-402b-8d79-d2df06845b94/resource/f000c5fa-242e-4ede-989d-455bb0a7b3b5/download/supplementary_video_1.mp4
@@ -48,6 +51,9 @@ https://data.researchdatafinder.qut.edu.au/dataset/0a195cfb-4e71-402b-8d79-d2df0
 |-l, --annotatelabels \<annotation>| Annotates the shown/saved image/video with image labels, must match image label list column names. If more than one is required, provide as comma separated text.|
 | -O | nr1,nr2,... List of image numbers to analyse, allows only specific images from the image dictionary to be analysed. |
 
+## Real-time processing 
+ 
+
 
 ## Dependencies 
 A number of software packages are used by the code as listed below. 
@@ -62,5 +68,6 @@ The list includes the versions that were used. Newer versions are likely compati
 | SciPy | 1.12.0 |
 | sknw | 0.15 |
 | networkx | 3.2.1 |
+
 
 
